@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CrystalReportPdf.Api", "CrystalReportPdf.Api\CrystalReportPdf.Api.csproj", "{E230A7D2-A794-4B0A-90DF-BBE4F5984016}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CrystalReportPdf.Tests", "CrystalReportPdf.Tests\CrystalReportPdf.Tests.csproj", "{3D4F7DEE-C61B-4402-BF6E-10249FD6F421}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E230A7D2-A794-4B0A-90DF-BBE4F5984016}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E230A7D2-A794-4B0A-90DF-BBE4F5984016}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E230A7D2-A794-4B0A-90DF-BBE4F5984016}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E230A7D2-A794-4B0A-90DF-BBE4F5984016}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3D4F7DEE-C61B-4402-BF6E-10249FD6F421}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3D4F7DEE-C61B-4402-BF6E-10249FD6F421}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3D4F7DEE-C61B-4402-BF6E-10249FD6F421}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3D4F7DEE-C61B-4402-BF6E-10249FD6F421}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {377E7698-4D29-4228-892C-52B2F85A7619}
+	EndGlobalSection
+EndGlobal
