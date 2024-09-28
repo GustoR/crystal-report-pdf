@@ -64,6 +64,10 @@ namespace CrystalReportPdf.Api
                     {
                         subReport.SetDataSource(ConvertJsonToDataTable(body.SubReportsDatasource[subReport.Name]));
                     }
+                    else
+                    {
+                        subReport.SetDataSource(new object[] { });
+                    }
                 }
 
                 // Export the report to byte array with stream
