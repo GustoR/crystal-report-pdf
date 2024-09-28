@@ -1,11 +1,14 @@
-﻿using System.Collections;
+﻿using System.Collections.Generic;
 
 namespace CrystalReportPdf.Api.Models
 {
-    public class RequestBody
+    public class RequestBody<T>
     {
-        public string TemplatePath { get; set; }
+        /// <summary>
+        /// Crystal Report template file name with extension
+        /// </summary>
         public string FileName { get; set; }
-        public IEnumerable Enumurable { get; set; }
+        public IEnumerable<T> Enumurable { get; set; } = new List<T>();
+        public Dictionary<string, object> SubReportsDatasource { get; set; } = new Dictionary<string, object>();
     }
 }
