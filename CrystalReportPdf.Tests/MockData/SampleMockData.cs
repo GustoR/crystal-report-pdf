@@ -1,65 +1,119 @@
 ﻿using CrystalReportPdf.Api.Models;
-using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 
 namespace CrystalReportPdf.Tests.MockData
 {
     public class SampleMockData
     {
-        public static IEnumerable<SampleItem> GetSampleItems()
+        public static List<SampleModel> Samples() => new List<SampleModel>()
         {
-            return new List<SampleItem>
+            new SampleModel()
             {
-                new SampleItem
+                SampleId = 1,
+                SampleNo = "SAMPLE-001",
+                SampleDate = DateTime.Today,
+                Items = new List<SampleItem>()
                 {
-                    ItemId = 1,
-                    ItemCode = "A001",
-                    ItemName = "Item 1",
-                    ItemType = "Type 1",
-                    UnitPrice = 100.00m,
-                    ItemImage = null,
+                    new SampleItem()
+                    {
+                        SampleId = 1,
+                        ItemId = 1,
+                        ItemCode = "ITEM-001",
+                        ItemName = "Item 1",
+                        ItemType = "Product",
+                        UnitPrice = 1000,
+                    },
+                    new SampleItem()
+                    {
+                        SampleId = 1,
+                        ItemId = 2,
+                        ItemCode = "ITEM-002",
+                        ItemName = "Item 2",
+                        ItemType = "Service",
+                        UnitPrice = 500,
+                    },
                 },
-                new SampleItem
+                PaymentTerms = new List<SamplePaymentTerm>()
                 {
-                    ItemId = 2,
-                    ItemCode = "A002",
-                    ItemName = "Item 2",
-                    ItemType = "Type 2",
-                    UnitPrice = 200.00m,
-                    ItemImage = null,
+                    new SamplePaymentTerm()
+                    {
+                        SampleId = 1,
+                        PaymentTerm = "Cash on Delivery",
+                    },
+                    new SamplePaymentTerm()
+                    {
+                        SampleId = 1,
+                        PaymentTerm = "Net 30 Days",
+                    },
                 },
-                new SampleItem
+                Notes = new List<SampleNote>()
                 {
-                    ItemId = 3,
-                    ItemCode = "A003",
-                    ItemName = "Item 3",
-                    ItemType = "Type 3",
-                    UnitPrice = 300.00m,
-                    ItemImage = null,
-                }
-            };
-        }
-        public static Dictionary<string, object> GetSampleSubReportsDatasource()
-        {
-            return new Dictionary<string, object>
+                    new SampleNote()
+                    {
+                        SampleId = 1,
+                        Note = "Sample note 1",
+                    },
+                    new SampleNote()
+                    {
+                        SampleId = 1,
+                        Note = "Sample note 2",
+                    },
+                },
+            },
+            new SampleModel()
             {
+                SampleId = 2,
+                SampleNo = "SAMPLE-002",
+                SampleDate = DateTime.Today.AddDays(1),
+                Items = new List<SampleItem>()
                 {
-                    "SampleNoteReport",
-                    JsonConvert.SerializeObject(new List<SampleNote>
+                    new SampleItem()
                     {
-                        new SampleNote { Seq = 1, Note = "Note 1" },
-                        new SampleNote { Seq = 2, Note = "Note 2" },
-                    })
+                        SampleId = 2,
+                        ItemId = 3,
+                        ItemCode = "ITEM-003",
+                        ItemName = "Item 3",
+                        ItemType = "Product",
+                        UnitPrice = 2000,
+                    },
+                    new SampleItem()
+                    {
+                        SampleId = 2,
+                        ItemId = 4,
+                        ItemCode = "ITEM-004",
+                        ItemName = "Item 4",
+                        ItemType = "Service",
+                        UnitPrice = 1000,
+                    },
                 },
+                PaymentTerms = new List<SamplePaymentTerm>()
                 {
-                    "SamplePaymentTermseReport",
-                    JsonConvert.SerializeObject(new List<SamplePaymentTerms>
+                    new SamplePaymentTerm()
                     {
-                        new SamplePaymentTerms { Seq = 1, PaymentTerm = "Term 1" },
-                        new SamplePaymentTerms { Seq = 2, PaymentTerm = "Term 2" },
-                    })
-                }
-            };
-        }
+                        SampleId = 2,
+                        PaymentTerm = "Cash on Delivery",
+                    },
+                    new SamplePaymentTerm()
+                    {
+                        SampleId = 2,
+                        PaymentTerm = "Net 30 Days",
+                    },
+                },
+                Notes = new List<SampleNote>()
+                {
+                    new SampleNote()
+                    {
+                        SampleId = 2,
+                        Note = "Sample note 3",
+                    },
+                    new SampleNote()
+                    {
+                        SampleId = 2,
+                        Note = "Sample note 4",
+                    },
+                },
+            },
+        };
     }
 }
